@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>March Suisse 2026</title>
+
+  <meta name="description" content="March Suisse 2026 - Votre plateforme de services et d'informations en Suisse.">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f5f7fa;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    /* HEADER */
+    header {
+      background: #111827;
+      color: white;
+      padding: 18px 7%;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+
+    .header-content {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: bold;
+      color: #ffcc00;
+    }
+
+    .logo span {
+      color: white;
+    }
+
+    nav {
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffcc00;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 650px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 80px 20px;
+      color: white;
+      background:
+        linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+        linear-gradient(135deg, #d71920, #111827);
+    }
+
+    .hero-content {
+      max-width: 850px;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 8vw, 75px);
+      margin-bottom: 20px;
+      font-weight: 800;
+    }
+
+    .hero h1 span {
+      color: #ffcc00;
+    }
+
+    .hero p {
+      font-size: 21px;
+      margin-bottom: 35px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 15px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .btn-primary {
+      background: #ffcc00;
+      color: #111;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      background: white;
+    }
+
+    .btn-secondary {
+      border: 2px solid white;
+      color: white;
+    }
+
+    .btn-secondary:hover {
+      background: white;
+      color: #111;
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 75px 7%;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-title h2 {
+      font-size: 38px;
+      color: #111827;
+      margin-bottom: 12px;
+    }
+
+    .section-title p {
+      color: #666;
+    }
+
+    /* ABOUT */
+    .about {
+      background: white;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 45px;
+      align-items: center;
+    }
+
+    .about-text h3 {
+      font-size: 30px;
+      margin-bottom: 18px;
+      color: #d71920;
+    }
+
+    .about-text p {
+      margin-bottom: 15px;
+      color: #555;
+    }
+
+    .about-box {
+      background: #111827;
+      color: white;
+      padding: 40px;
+      border-radius: 15px;
+      text-align: center;
+    }
+
+    .about-box .flag {
+      font-size: 70px;
+      margin-bottom: 15px;
+    }
+
+    /* SERVICES */
+    .services {
+      background: #f5f7fa;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-7px);
+    }
+
+    .icon {
+      font-size: 45px;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      margin-bottom: 12px;
+      color: #111827;
+    }
+
+    .card p {
+      color: #666;
+    }
+
+    /* INFO */
+    .info {
+      background: white;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+      text-align: center;
+    }
+
+    .info-item {
+      padding: 30px;
+      border-radius: 12px;
+      background: #f5f7fa;
+    }
+
+    .info-item strong {
+      display: block;
+      font-size: 25px;
+      color: #d71920;
+      margin-bottom: 8px;
+    }
+
+    /* CONTACT */
+    .contact {
+      background: #111827;
+      color: white;
+    }
+
+    .contact .section-title h2 {
+      color: white;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+
+    .contact-box {
+      background: rgba(255,255,255,0.08);
+      padding: 30px;
+      border-radius: 15px;
+    }
+
+    .contact-box h3 {
+      color: #ffcc00;
+      margin-bottom: 15px;
+    }
+
+    .contact-box p {
+      margin-bottom: 12px;
+    }
+
+    .whatsapp {
+      display: inline-block;
+      margin-top: 15px;
+      background: #25D366;
+      color: white;
+      padding: 14px 25px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .whatsapp:hover {
+      opacity: 0.85;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #080b11;
+      color: #aaa;
+      text-align: center;
+      padding: 25px 15px;
+    }
+
+    footer strong {
+      color: #ffcc00;
+    }
+
+    /* MOBILE */
+    @media (max-width: 800px) {
+
+      .header-content {
+        flex-direction: column;
+      }
+
+      nav {
+        justify-content: center;
+        gap: 15px;
+      }
+
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cards,
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: 570px;
+      }
+
+      .hero p {
+        font-size: 18px;
+      }
+
+      section {
+        padding: 55px 5%;
+      }
+
+      .section-title h2 {
+        font-size: 31px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-content">
+
+      <div class="logo">
+        March <span>Suisse 2026</span>
+      </div>
+
+      <nav>
+        <a href="#accueil">Accueil</a>
+        <a href="#apropos">À propos</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <!-- ACCUEIL -->
+  <section class="hero" id="accueil">
+
+    <div class="hero-content">
+
+      <h1>
+        March <span>Suisse 2026</span>
+      </h1>
+
+      <p>
+        Bienvenue sur notre plateforme. Découvrez nos services,
+        nos informations et nos opportunités en Suisse.
+      </p>
+
+      <div class="buttons">
+
+        <a href="#services" class="btn btn-primary">
+          Découvrir nos services
+        </a>
+
+        <a href="#contact" class="btn btn-secondary">
+          Nous contacter
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- À PROPOS -->
+  <section class="about" id="apropos">
+
+    <div class="container">
+
+      <div class="section-title">
+        <h2>À propos de March Suisse 2026</h2>
+        <p>Une plateforme moderne, simple et accessible.</p>
+      </div>
+
+      <div class="about-grid">
+
+        <div class="about-text">
+
+          <h3>Notre objectif</h3>
+
+          <p>
+            March Suisse 2026 a pour objectif de proposer une
+            plateforme claire et accessible pour présenter nos
+            activités, nos services et nos différentes opportunités.
+          </p>
+
+          <p>
+            Nous souhaitons construire une relation basée sur la
+            confiance, le sérieux et la transparence.
+          </p>
+
+          <p>
+            Notre équipe reste disponible pour répondre à vos
+            questions et vous accompagner.
+          </p>
+
+        </div>
+
+        <div class="about-box">
+
+          <div class="flag">🇨🇭</div>
+
+          <h3>March Suisse 2026</h3>
+
+          <p>
+            Suisse • Europe • International
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <h2>Nos services</h2>
+
+        <p>
+          Découvrez les principales possibilités proposées
+          par notre plateforme.
+        </p>
+
+      </div>
+
+      <div class="cards">
+
+        <div class="card">
+
+          <div class="icon">💼</div>
+
+          <h3>Opportunités</h3>
+
+          <p>
+            Découvrez différentes opportunités et informations
+            présentées sur notre plateforme.
+          </p>
+
+        </div>
+
+
+        <div class="card">
+
+          <div class="icon">🤝</div>
+
+          <h3>Partenariats</h3>
+
+          <p>
+            Nous favorisons les échanges et les collaborations
+            avec des partenaires sérieux.
+          </p>
+
+        </div>
+
+
+        <div class="card">
+
+          <div class="icon">🌍</div>
+
+          <h3>International</h3>
+
+          <p>
+            Une ouverture vers la Suisse, l'Europe et les
+            partenaires internationaux.
+          </p>
+
+        </div>
+
+
+        <div class="card">
+
+          <div class="icon">📋</div>
+
+          <h3>Informations</h3>
+
+          <p>
+            Retrouvez les informations importantes concernant
+            nos activités et nos projets.
+          </p>
+
+        </div>
+
+
+        <div class="card">
+
+          <div class="icon">🔒</div>
+
+          <h3>Sérieux & confiance</h3>
+
+          <p>
+            Nous accordons une grande importance à la
+            transparence et à la confiance.
+          </p>
+
+        </div>
+
+
+        <div class="card">
+
+          <div class="icon">📞</div>
+
+          <h3>Assistance</h3>
+
+          <p>
+            Une question ? Contactez-nous directement pour
+            obtenir plus d'informations.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- INFORMATIONS -->
+  <section class="info">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <h2>Pourquoi nous choisir ?</h2>
+
+      </div>
+
+      <div class="info-grid">
+
+        <div class="info-item">
+
+          <strong>01</strong>
+
+          <span>
+            Une présentation professionnelle
+          </span>
+
+        </div>
+
+
+        <div class="info-item">
+
+          <strong>02</strong>
+
+          <span>
+            Une plateforme accessible sur téléphone
+          </span>
+
+        </div>
+
+
+        <div class="info-item">
+
+          <strong>03</strong>
+
+          <span>
+            Une communication directe
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <h2>Contactez-nous</h2>
+
+        <p>
+          Nous sommes disponibles pour répondre à vos questions.
+        </p>
+
+      </div>
+
+
+      <div class="contact-grid">
+
+        <div class="contact-box">
+
+          <h3>March Suisse 2026</h3>
+
+          <p>
+            Vous souhaitez obtenir plus d'informations,
+            proposer un partenariat ou nous contacter ?
+          </p>
+
+          <p>
+            Écrivez-nous directement sur WhatsApp.
+          </p>
+
+          <!-- REMPLACEZ LE NUMÉRO CI-DESSOUS -->
+          <a
+            class="whatsapp"
+            href="https://wa.me/2290000000000"
+            target="_blank">
+            💬 Contacter sur WhatsApp
+          </a>
+
+        </div>
+
+
+        <div class="contact-box">
+
+          <h3>Informations</h3>
+
+          <p>📍 Suisse / International</p>
+
+          <p>📧 Email : contact@march-suisse-2026.com</p>
+
+          <p>🌐 March Suisse 2026</p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    <p>
+      © 2026 <strong>March Suisse 2026</strong>.
+      Tous droits réservés.
+    </p>
+
+  </footer>
+
+
+</body>
+  </html>
